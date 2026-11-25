@@ -2,7 +2,7 @@
 // sign-in requires a valid admin session.
 
 import { Hono } from 'hono';
-import { isConfigured, isSignedIn, signIn, signOut, requireAdmin, sameOriginOnly } from '../lib/auth.js';
+import { passwordStatus, isSignedIn, signIn, signOut, requireAdmin, sameOriginOnly } from '../lib/auth.js';
 import { DEFAULTS, SETTING_KEYS, mergeSettings } from '../lib/settings.js';
 import { CURRENCIES, AVAILABILITY, slugify } from '../lib/format.js';
 import { categoriesQuery, settingsQuery } from '../lib/db.js';
@@ -22,7 +22,7 @@ const isImageUrl = (url) => typeof url === 'string' && /^\/(media|img)\/[\w./-]+
 
 // ---- Session --------------------------------------------------------------
 
-admin.get('/me', async (c) => c.json({ configured: isConfigured(c.env), signedIn: await isSignedIn(c) }));
+admin.get('/me', async (c) => c.json({ passwordStatus: await passwordStatus(c.env), signedIn: await isSignedIn(c) }));
 
 admin.post('/login', async (c) => {
   const { password } = await c.req.json().catch(() => ({}));

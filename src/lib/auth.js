@@ -31,7 +31,32 @@ const cookieOptions = (c) => ({
   secure: new URL(c.req.url).protocol === 'https:',
 });
 
-export const isConfigured = (env) => typeof env.ADMIN_PASSWORD === 'string' && env.ADMIN_PASSWORD.length >= 8;
+/** Reads the owner password: a Worker secret (string) or a Secrets Store binding. */
+async function adminPassword(env) {
+  const value = env.ADMIN_PASSWORD;
+  if (typeof value === 'string') return value;
+  if (value && typeof value.get === 'function') {
+    try {
+      return String(await value.get());
+    } catch {
+      return null;
+    }
+  }
+  return null;
+}
+
+/** 'ok' | 'missing' (the running Worker cannot see ADMIN_PASSWORD) | 'too_short' (under 8 characters) */
+export async function passwordStatus(env) {
+  const value = await adminPassword(env);
+  if (value == null) return 'missing';
+  return value.length >= 8 ? 'ok' : 'too_short';
+}
+
+const STATUS_MESSAGE = {
+  missing:
+    'ADMIN_PASSWORD 값이 아직 사이트에 적용되지 않았습니다. Cloudflare에 저장한 값이 배포(Deploy)되어야 합니다.',
+  too_short: 'ADMIN_PASSWORD 값이 8자 미만입니다. 8자 이상으로 다시 등록해 주세요.',
+};
 
 export async function isSignedIn(c) {
   const token = getCookie(c, COOKIE);
@@ -45,9 +70,9 @@ export async function isSignedIn(c) {
 /** Returns { ok } or { ok: false, status, message }. */
 export async function signIn(c, password) {
   const db = c.env.DB;
-  if (!isConfigured(c.env)) {
-    return { ok: false, status: 503, message: 'ADMIN_PASSWORD 시크릿이 아직 설정되지 않았습니다 (8자 이상).' };
-  }
+  const status = await passwordStatus(c.env);
+  if (status !== 'ok') return { ok: false, status: 503, message: STATUS_MESSAGE[status] };
+  const expectedPassword = await adminPassword(c.env);
   const ip = c.req.header('cf-connecting-ip') ?? 'local';
   const since = Date.now() - ATTEMPT_WINDOW_MS;
   const recent = await db
@@ -58,7 +83,7 @@ export async function signIn(c, password) {
     return { ok: false, status: 429, message: '로그인 시도가 너무 많습니다. 15분 뒤에 다시 시도해 주세요.' };
   }
 
-  const [given, expected] = await Promise.all([sha256(String(password ?? '')), sha256(c.env.ADMIN_PASSWORD)]);
+  const [given, expected] = await Promise.all([sha256(String(password ?? '')), sha256(expectedPassword)]);
   if (!safeEqual(given, expected)) {
     await db.batch([
       db.prepare('INSERT INTO login_attempts (ip, at) VALUES (?, ?)').bind(ip, Date.now()),

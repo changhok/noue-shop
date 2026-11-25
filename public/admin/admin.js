@@ -32,7 +32,7 @@ async function api(path, { method = 'GET', json, body, headers = {} } = {}) {
   });
   const data = await response.json().catch(() => ({}));
   if (response.status === 401 && path !== '/login') {
-    renderLogin(true);
+    renderLogin();
     throw new Error(data.error || '로그인이 필요합니다.');
   }
   if (!response.ok) throw new Error(data.error || `요청에 실패했습니다 (${response.status}).`);
@@ -143,14 +143,17 @@ async function reload() {
 
 // ---- login ------------------------------------------------------------------
 
-function renderLogin(configured) {
+const PASSWORD_NOTES = {
+  missing: `관리자 비밀번호(<b>ADMIN_PASSWORD</b>)가 아직 사이트에 적용되지 않았습니다.
+    Cloudflare의 Variables and Secrets에 저장했다면, 저장된 버전이 아직 배포되지 않은 상태입니다.`,
+  too_short: `<b>ADMIN_PASSWORD</b> 값이 8자 미만입니다. Cloudflare에서 8자 이상으로 다시 등록해 주세요.`,
+};
+
+function renderLogin(status = 'ok') {
   app.innerHTML = `
     <form class="login" id="login-form">
       <h1>쇼핑몰 관리</h1>
-      ${configured
-        ? ''
-        : `<p class="note">관리자 비밀번호가 아직 설정되지 않았습니다. Cloudflare 대시보드의 Worker 설정에서
-           <b>ADMIN_PASSWORD</b> 시크릿(8자 이상)을 추가한 뒤 다시 접속해 주세요.</p>`}
+      ${PASSWORD_NOTES[status] ? `<p class="note">${PASSWORD_NOTES[status]}</p>` : ''}
       <label class="field"><span>관리자 비밀번호</span>
         <input type="password" name="password" autocomplete="current-password" required autofocus>
       </label>
@@ -623,7 +626,7 @@ app.addEventListener('click', (event) => {
   run(null, async () => {
     await api('/logout', { method: 'POST' });
     state.data = null;
-    renderLogin(true);
+    renderLogin();
   });
 });
 
@@ -632,7 +635,7 @@ window.addEventListener('hashchange', route);
 (async function start() {
   try {
     const me = await api('/me');
-    if (!me.signedIn) return renderLogin(me.configured);
+    if (!me.signedIn) return renderLogin(me.passwordStatus);
     await reload();
     route();
   } catch (error) {
