@@ -8,6 +8,10 @@
   // Keep the free https://noue-shop.<your-subdomain>.workers.dev address switched on.
   "workers_dev": true,
 
+  // Values added in the Cloudflare dashboard (Settings > Variables and Secrets)
+  // are kept when a new version is deployed from GitHub.
+  "keep_vars": true,
+
   // Static files (CSS, fonts, images, admin screen) are served straight from ./public
   "assets": {
     "directory": "./public",
