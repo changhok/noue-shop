@@ -5,6 +5,9 @@
   "main": "src/index.js",
   "compatibility_date": "2026-10-01",
 
+  // Keep the free https://noue-shop.<your-subdomain>.workers.dev address switched on.
+  "workers_dev": true,
+
   // Static files (CSS, fonts, images, admin screen) are served straight from ./public
   "assets": {
     "directory": "./public",
