@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="heart charm illustration">
+  <defs>
+    <pattern id="st" width="14" height="11" patternUnits="userSpaceOnUse">
+      <path d="M1.5 2 L7 9 L12.5 2" fill="none" stroke="#000" stroke-opacity=".13" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </pattern>
+  </defs>
+  <circle cx="200" cy="72" r="27" fill="none" stroke="#B99C5F" stroke-width="5"/>
+  <path d="M181 55 A27 27 0 0 1 219 55" fill="none" stroke="#D9C592" stroke-width="2" stroke-linecap="round"/>
+  <rect x="191" y="97" width="18" height="34" rx="9" fill="none" stroke="#B99C5F" stroke-width="5"/>
+  <path d="M200 131 L200 256" stroke="#8C8576" stroke-width="4" stroke-linecap="round"/>
+  <path d="M200 384 C 118 328, 108 270, 138 244 C 164 222, 194 238, 200 264 C 206 238, 236 222, 262 244 C 292 270, 282 328, 200 384Z" fill="#C4455A"/>
+  <path d="M200 384 C 118 328, 108 270, 138 244 C 164 222, 194 238, 200 264 C 206 238, 236 222, 262 244 C 292 270, 282 328, 200 384Z" fill="url(#st)"/>
+</svg>

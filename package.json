@@ -1,0 +1,18 @@
+{
+  "name": "noue-shop",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Minimal bag charm & keyring storefront on Cloudflare Workers + D1",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "samples": "node scripts/make-samples.mjs"
+  },
+  "dependencies": {
+    "hono": "^4.12.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.168.0"
+  }
+}

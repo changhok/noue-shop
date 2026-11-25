@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="fish charm illustration">
+  <defs>
+    <pattern id="st" width="14" height="11" patternUnits="userSpaceOnUse">
+      <path d="M1.5 2 L7 9 L12.5 2" fill="none" stroke="#000" stroke-opacity=".13" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="500" fill="#F1F1EF"/>
+  <circle cx="200" cy="72" r="27" fill="none" stroke="#B99C5F" stroke-width="5"/>
+  <path d="M181 55 A27 27 0 0 1 219 55" fill="none" stroke="#D9C592" stroke-width="2" stroke-linecap="round"/>
+  <rect x="191" y="97" width="18" height="34" rx="9" fill="none" stroke="#B99C5F" stroke-width="5"/>
+  <path d="M200 131 L200 262" stroke="#8C8576" stroke-width="4" stroke-linecap="round"/>
+  <path d="M262 304 L 306 266 L 300 304 L 306 342 Z" fill="#3F6E94"/>
+  <path d="M262 304 L 306 266 L 300 304 L 306 342 Z" fill="url(#st)"/>
+  <ellipse cx="198" cy="304" rx="74" ry="44" fill="#4C7FA8"/>
+  <ellipse cx="198" cy="304" rx="74" ry="44" fill="url(#st)"/>
+  <path d="M186 262 C 200 240, 224 240, 232 266 Z" fill="#3F6E94"/>
+  <path d="M186 262 C 200 240, 224 240, 232 266 Z" fill="url(#st)"/>
+  <circle cx="158" cy="296" r="6" fill="#FBF9F3"/>
+</svg>

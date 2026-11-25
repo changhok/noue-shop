@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="lemon charm illustration">
+  <defs>
+    <pattern id="st" width="14" height="11" patternUnits="userSpaceOnUse">
+      <path d="M1.5 2 L7 9 L12.5 2" fill="none" stroke="#000" stroke-opacity=".13" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="500" fill="#F1F1EF"/>
+  <circle cx="200" cy="72" r="27" fill="none" stroke="#B99C5F" stroke-width="5"/>
+  <path d="M181 55 A27 27 0 0 1 219 55" fill="none" stroke="#D9C592" stroke-width="2" stroke-linecap="round"/>
+  <rect x="191" y="97" width="18" height="34" rx="9" fill="none" stroke="#B99C5F" stroke-width="5"/>
+  <path d="M200 131 L200 214" stroke="#8C8576" stroke-width="4" stroke-linecap="round"/>
+  <path d="M204 226 C 232 204, 268 212, 280 238 C 252 252, 222 248, 204 226Z" fill="#5C7C44"/>
+  <path d="M204 226 C 232 204, 268 212, 280 238 C 252 252, 222 248, 204 226Z" fill="url(#st)"/>
+  <path d="M200 226 C 246 226, 268 268, 268 308 C 268 352, 240 384, 208 390 C 204 400, 196 400, 192 390 C 160 384, 132 352, 132 308 C 132 268, 154 226, 200 226Z" fill="#EBC944"/>
+  <path d="M200 226 C 246 226, 268 268, 268 308 C 268 352, 240 384, 208 390 C 204 400, 196 400, 192 390 C 160 384, 132 352, 132 308 C 132 268, 154 226, 200 226Z" fill="url(#st)"/>
+</svg>

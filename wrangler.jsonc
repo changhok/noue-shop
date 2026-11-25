@@ -1,0 +1,27 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Worker name = the address: https://noue-shop.<your-subdomain>.workers.dev
+  "name": "noue-shop",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-01",
+
+  // Static files (CSS, fonts, images, admin screen) are served straight from ./public
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS"
+  },
+
+  // D1 database. No database_id is needed: Wrangler creates "noue-shop-db"
+  // on the first deploy and keeps it linked on later deploys.
+  // If you created the database yourself, add:  "database_id": "<id>"
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "noue-shop-db"
+    }
+  ],
+
+  "observability": {
+    "enabled": true
+  }
+}

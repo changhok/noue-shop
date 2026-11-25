@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="pear charm illustration">
+  <defs>
+    <pattern id="st" width="14" height="11" patternUnits="userSpaceOnUse">
+      <path d="M1.5 2 L7 9 L12.5 2" fill="none" stroke="#000" stroke-opacity=".13" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </pattern>
+  </defs>
+  <circle cx="200" cy="72" r="27" fill="none" stroke="#B99C5F" stroke-width="5"/>
+  <path d="M181 55 A27 27 0 0 1 219 55" fill="none" stroke="#D9C592" stroke-width="2" stroke-linecap="round"/>
+  <rect x="191" y="97" width="18" height="34" rx="9" fill="none" stroke="#B99C5F" stroke-width="5"/>
+  <path d="M200 131 L200 208" stroke="#8C8576" stroke-width="4" stroke-linecap="round"/>
+  <path d="M204 220 C 228 200, 258 208, 266 230 C 244 242, 220 238, 204 220Z" fill="#5C7C44"/>
+  <path d="M204 220 C 228 200, 258 208, 266 230 C 244 242, 220 238, 204 220Z" fill="url(#st)"/>
+  <path d="M200 224 C 222 224, 232 250, 232 270 C 232 296, 264 312, 264 348 C 264 382, 232 400, 200 400 C 168 400, 136 382, 136 348 C 136 312, 168 296, 168 270 C 168 250, 178 224, 200 224Z" fill="#A9B85A"/>
+  <path d="M200 224 C 222 224, 232 250, 232 270 C 232 296, 264 312, 264 348 C 264 382, 232 400, 200 400 C 168 400, 136 382, 136 348 C 136 312, 168 296, 168 270 C 168 250, 178 224, 200 224Z" fill="url(#st)"/>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="clover charm illustration">
+  <defs>
+    <pattern id="st" width="14" height="11" patternUnits="userSpaceOnUse">
+      <path d="M1.5 2 L7 9 L12.5 2" fill="none" stroke="#000" stroke-opacity=".13" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </pattern>
+  </defs>
+  <circle cx="200" cy="72" r="27" fill="none" stroke="#B99C5F" stroke-width="5"/>
+  <path d="M181 55 A27 27 0 0 1 219 55" fill="none" stroke="#D9C592" stroke-width="2" stroke-linecap="round"/>
+  <rect x="191" y="97" width="18" height="34" rx="9" fill="none" stroke="#B99C5F" stroke-width="5"/>
+  <path d="M200 131 L200 222" stroke="#8C8576" stroke-width="4" stroke-linecap="round"/>
+  <path d="M200 320 C 204 352, 212 378, 226 398" fill="none" stroke="#3F7445" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="200" cy="302" r="30" fill="#458049"/>
+  <circle cx="166" cy="270" r="40" fill="#4E8A52"/>
+  <circle cx="166" cy="270" r="40" fill="url(#st)"/>
+  <circle cx="234" cy="270" r="40" fill="#4E8A52"/>
+  <circle cx="234" cy="270" r="40" fill="url(#st)"/>
+  <circle cx="166" cy="334" r="40" fill="#458049"/>
+  <circle cx="166" cy="334" r="40" fill="url(#st)"/>
+  <circle cx="234" cy="334" r="40" fill="#458049"/>
+  <circle cx="234" cy="334" r="40" fill="url(#st)"/>
+</svg>

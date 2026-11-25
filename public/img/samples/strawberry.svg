@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-label="strawberry charm illustration">
+  <defs>
+    <pattern id="st" width="14" height="11" patternUnits="userSpaceOnUse">
+      <path d="M1.5 2 L7 9 L12.5 2" fill="none" stroke="#000" stroke-opacity=".13" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="500" fill="#F1F1EF"/>
+  <circle cx="200" cy="72" r="27" fill="none" stroke="#B99C5F" stroke-width="5"/>
+  <path d="M181 55 A27 27 0 0 1 219 55" fill="none" stroke="#D9C592" stroke-width="2" stroke-linecap="round"/>
+  <rect x="191" y="97" width="18" height="34" rx="9" fill="none" stroke="#B99C5F" stroke-width="5"/>
+  <path d="M200 131 L200 226" stroke="#8C8576" stroke-width="4" stroke-linecap="round"/>
+  <path d="M200 236 C 256 226, 286 266, 271 316 C 259 356, 226 386, 200 396 C 174 386, 141 356, 129 316 C 114 266, 144 226, 200 236Z" fill="#C53A3A"/>
+  <path d="M200 236 C 256 226, 286 266, 271 316 C 259 356, 226 386, 200 396 C 174 386, 141 356, 129 316 C 114 266, 144 226, 200 236Z" fill="url(#st)"/>
+  <path d="M200 222 L 172 214 L 180 242 L 148 250 L 184 264 L 200 250 L 216 264 L 252 250 L 220 242 L 228 214 Z" fill="#55793F"/>
+  <path d="M200 222 L 172 214 L 180 242 L 148 250 L 184 264 L 200 250 L 216 264 L 252 250 L 220 242 L 228 214 Z" fill="url(#st)"/>
+  <ellipse cx="170" cy="290" rx="3.4" ry="6" transform="rotate(12 170 290)" fill="#F6E7C8"/>
+  <ellipse cx="205" cy="282" rx="3.4" ry="6" transform="rotate(12 205 282)" fill="#F6E7C8"/>
+  <ellipse cx="236" cy="296" rx="3.4" ry="6" transform="rotate(12 236 296)" fill="#F6E7C8"/>
+  <ellipse cx="186" cy="326" rx="3.4" ry="6" transform="rotate(12 186 326)" fill="#F6E7C8"/>
+  <ellipse cx="222" cy="330" rx="3.4" ry="6" transform="rotate(12 222 330)" fill="#F6E7C8"/>
+  <ellipse cx="202" cy="362" rx="3.4" ry="6" transform="rotate(12 202 362)" fill="#F6E7C8"/>
+</svg>
